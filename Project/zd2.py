@@ -1,43 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import math
 
-
-def cylinder():
-    """
-    Вычисление полной площади или площади боковой поверхности цилиндра
-    """
-    way = int(
-        input(
-            "Какую площадь вы хотите вычислить?\n"
-            "Боковой поверхности(1)\n"
-            "Полную площадь(2)\n"
-            "> "
+def cylinder(radius, height):
+    def circle():
+        print(
+            "Площадь полной поверхности цилиндра: ",
+            2 * 3.14 * radius * height + 2 * 3.14 * radius ** 2,
         )
+
+    message = input(
+        "Какую площать вы хотите получить: площадь бокой"
+        " поверхности или полную площадь цилиндра?\n"
+        "Площадь бокой поверхности команда - неполная\n"
+        "Площадь полной поверхности цилинда команда - полная\n"
+        ">>>"
     )
-
-    r = float(input("Введите радиус: "))
-    h = float(input("Введите высоту: "))
-    s = 2 * math.pi * r * h
-
-    if way == 1:
-        print(f"Боковая площадь s = {s}")
-
-    elif way == 2:
-        s += circle(r) * 2
-        print(f"Полная площадь s = {s}")
-
+    if message.lower() == "неполная":
+        print("Площадь боковой повехности: ", 2 * 3.14 * radius * height)
+    elif message.lower() == "полная":
+        circle()
     else:
-        print("Ошибка")
-
-
-def circle(r):
-    """
-    Вычисление площади основания
-    """
-    return math.pi * pow(r, 2)
+        print("Неизвестная команда")
 
 
 if __name__ == "__main__":
-    cylinder()
+    radius = int(input("Введите радиус цилиндра"))
+    height = int(input("Введите высоту цилиндра"))
+    cylinder(radius, height)
