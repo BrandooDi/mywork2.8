@@ -56,12 +56,12 @@ def display_plats(staff):
         print("Список платежей пуст")
 
 
-def select_plats(staff, jet):
+def select_plats(staff, sum):
     """
     Выбрать сумму с данным типом.
     """
     # Сформировать список  платежей.
-    result = [plat for plat in staff if jet == plat.get("sum", 0)]
+    result = [plat for plat in staff if sum == plat.get("sum", 0)]
 
     # Возвратить список выбранных платежей.
     return result
@@ -91,7 +91,7 @@ def main():
             plats.append(plat)
             # Отсортировать список в случае необходимости.
             if len(plats) > 1:
-                plats.sort(key=lambda item: item.get("destination", ""))
+                plats.sort(key=lambda item: item.get("raspol", ""))
 
         elif command == "list":
             # Отобразить все платежи.
