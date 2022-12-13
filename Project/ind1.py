@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import sys
@@ -46,7 +46,7 @@ def display_plats(staff):
                     idx,
                     plat.get("raspol", ""),
                     plat.get("raspl", ""),
-                    plat.get("sum", ""),
+                    plat.get("sum", 0),
                 )
             )
 
@@ -61,7 +61,7 @@ def select_plats(staff, jet):
     Выбрать сумму с данным типом.
     """
     # Сформировать список  платежей.
-    result = [plat for plat in staff if jet == plat.get("sum", "")]
+    result = [plat for plat in staff if jet == plat.get("sum", 0)]
 
     # Возвратить список выбранных платежей.
     return result
