@@ -6,7 +6,7 @@ def cylinder(radius, height):
     def circle():
         print(
             "Площадь полной поверхности цилиндра: ",
-            2 * 3.14 * radius * height + 2 * 3.14 * radius ** 2,
+            2 * 3.14 * radius * height + 2 * 3.14 * radius**2,
         )
 
     message = input(
